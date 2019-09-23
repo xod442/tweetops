@@ -1,0 +1,13 @@
+---
+name: "process_vlan_tweet_rule"
+description: "If tweet from netwookie, process it."
+enabled: true
+
+trigger:
+  type: "twitter.matched_tweet"
+  parameters: {}
+
+action:
+  ref: "process_vlan_tweet"
+  parameters:
+    link: "{{ trigger }}"

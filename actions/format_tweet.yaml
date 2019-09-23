@@ -1,0 +1,13 @@
+---
+name: format_tweet
+pack: tweetops
+description: process dictionary into actionable items
+runner_type: python-script
+entry_point: format_tweet.py
+enabled: true
+parameters:
+  trigger:
+    type: "object"
+    description: "The dictionary of the tweet"
+    required: true
+    position: 0

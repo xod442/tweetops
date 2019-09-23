@@ -1,0 +1,10 @@
+---
+name: process_vlan_tweet
+description: A workflow for processing a tweet with a vlan and sending to the HPE CFM controller.
+runner_type: orquesta
+entry_point: workflows/process_vlan_tweet.yaml
+enabled: true
+parameters:
+  trigger:
+    required: true
+    type: object
