@@ -1,1 +1,5 @@
 ---
+  tweetops:
+    description: "null config.schema"
+    type: "string"
+    required: false
