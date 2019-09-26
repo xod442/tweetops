@@ -10,7 +10,7 @@ tasks:
   format_tweet:
     action: tweetops.format_tweet
     input:
-      trigger: "<% ctx().data %>"
+      tweet_body: "<% ctx().data %>"
     next:
       - when: <% succeeded() %>
         publish:

@@ -26,8 +26,8 @@ from st2common.runners.base_action import Action
 
 class FormatTweet(Action):
 
-    def run(self, trigger):        # Get trigger dictionaary.
-        if tweet_body['payload']['user']['screenname'] == 'netwookie':
+    def run(self, tweet_body):        # Get trigger dictionaary.
+        if tweet_body['payload']['user']['screen_name'] == 'netwookie':
             line = tweet_body['payload']['text']
             # Anything between two slashes is the vlan group
             x,vlans,y = line.split('/')
