@@ -8,6 +8,6 @@ trigger:
   parameters: {}
 
 action:
-  ref: "process_vlan_tweet"
+  ref: "tweetops.process_vlan_tweet"
   parameters:
-    trigger: "{{ trigger }}"
+    tweet_body: "{{ trigger }}"

@@ -3,14 +3,14 @@ version: '1.0'
 description: "A workflow that gets a trigger from twitter and processes the data."
 
 input:
-  - data
+  - twitter_body
 
 
 tasks:
   format_tweet:
     action: tweetops.format_tweet
     input:
-      tweet_body: "<% ctx().data %>"
+      tweet_body: "<% ctx().twitter_body %>"
     next:
       - when: <% succeeded() %>
         publish:
