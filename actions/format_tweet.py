@@ -27,6 +27,10 @@ from st2common.runners.base_action import Action
 class FormatTweet(Action):
 
     def run(self, trigger):        # Get trigger dictionaary.
-        line = trigger['text']
-        vlans, junk = split.line('-')
-        return (True, vlans)
+        if tweet_body['payload']['user']['screenname'] == 'netwookie':
+            line = tweet_body['payload']['text']
+            # Anything between two slashes is the vlan group
+            x,vlans,y = line.split('/')
+            name='Automated vlan group with Twitter & StackStorm'
+            description="To prove I can integrate anything into plexxi"
+        return (True, vlans.strip(),name,description)

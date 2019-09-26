@@ -10,4 +10,4 @@ trigger:
 action:
   ref: "process_vlan_tweet"
   parameters:
-    link: "{{ trigger }}"
+    trigger: "{{ trigger }}"

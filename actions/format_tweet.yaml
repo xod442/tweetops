@@ -6,7 +6,7 @@ runner_type: python-script
 entry_point: format_tweet.py
 enabled: true
 parameters:
-  trigger:
+  tweet_body:
     type: "object"
     description: "The dictionary of the tweet"
     required: true

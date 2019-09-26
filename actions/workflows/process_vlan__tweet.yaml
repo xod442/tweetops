@@ -1,23 +1,25 @@
 version: '1.0'
 
-description: A workflow that gets a trigger from twitter and processes the data.
+description: "A workflow that gets a trigger from twitter and processes the data."
 
 input:
-  - trigger
+  - data
 
 
 tasks:
   format_tweet:
     action: tweetops.format_tweet
     input:
-      trigger: "<% ctx().trigger %>"
+      trigger: "<% ctx().data %>"
     next:
       - when: <% succeeded() %>
         publish:
-          - data: <% result().stdout %>
+          - vlan_object: <% result().result %>
         do: send_to_hpecfm
 
   send_to_hpecfm:
     action: hpecfm.post_vlan
     input:
-      data: "<% ctx().data %>"
+      name: "<% ctx().vlan_object[2] %>"
+      description: "<% ctx().vlan_object[3] %>"
+      vlans: "<% ctx().vlan_object[1] %>"

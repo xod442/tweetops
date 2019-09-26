@@ -5,6 +5,6 @@ runner_type: orquesta
 entry_point: workflows/process_vlan_tweet.yaml
 enabled: true
 parameters:
-  trigger:
+  data:
     required: true
     type: object
